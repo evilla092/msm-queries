@@ -1,0 +1,41 @@
+<h1>Director #<%= @director.id %> details</h1>
+<a href="/directors">Go Back</a>
+<hr>
+<dl>
+  <dt>Name</dt>
+    <dl><%= @director.name %></dl>
+  <dt>Dob</dt>
+    <dl><%= @director.dob %></dl>
+  <dt>Bio</dt>
+    <dl><%= @director.bio %></dl>
+  <dt>Image</dt>
+    <dl><img src="<%= @director.image %>" style="width:250px;"></dl>
+  <dt>Created at</dt>
+    <dl><%= @director.created_at %></dl>
+  <dt>Updated at</dt>
+    <dl><%= @director.updated_at %></dl>
+</dl>
+
+<hr>
+
+<h2>Filmography</h2>
+<table border="1">
+<tbody>
+  <tr>
+      <th>ID</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Dob</th>
+  </tr>
+  <% @director_films.each do |row|%>
+  <tr>
+  <th><%= row.id %></th>
+  <th><img src="<%= row.image %>" style="width:250px;"></th>
+  <th><%= row.title %></th>
+  <th><%= row.year %></th>
+  <th><%= @director.name%>
+  <th><a href="/movies/<%= row.id %>">Show details</a></th>
+  <% end %>
+  </tr>
+</tbody>
+</table>

@@ -1,0 +1,22 @@
+<h1>List of all Directors</h1>
+<hr>
+<table border="1">
+<tbody>
+  <tr>
+      <th>ID</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Dob</th>
+      <th></th>
+  </tr>
+  <% @director_rows.each do |row|%>
+  <tr>
+  <th><%= row.id %></th>
+  <th><img src="<%= row.image %>" style="width:250px;"></th>
+  <th><%= row.name %></th>
+  <th><%= row.dob %></th>
+  <th><a href="/directors/<%= row.id %>">Show details</a></th>
+  <% end %>
+  </tr>
+</tbody>
+</table>

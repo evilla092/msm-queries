@@ -1,0 +1,23 @@
+<h1>List ogf all movies</h1>
+<table border="1">
+<tbody>
+  <tr>
+      <th>ID</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>year</th>
+      <th>Director</th>
+      <th></th>
+  </tr>
+  <% @movie_rows.each do |row|%>
+  <tr>
+  <th><%= row.id %></th>
+  <th><img src="<%= row.image %>" style="width:250px;"></th>
+  <th><%= row.title %></th>
+  <th><%= row.year %></th>
+  <th><%= @directors.where(id: row.director_id).first.name %>
+  <th><a href="/movies/<%= row.id %>">Show details</a></th>
+  <% end %>
+  </tr>
+</tbody>
+</table>
